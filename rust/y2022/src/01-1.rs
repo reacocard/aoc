@@ -13,10 +13,8 @@ fn main() {
                     best = current
                 }
                 current = 0
-            },
-            _ => {
-                current += line.parse::<u64>().unwrap()
             }
+            _ => current += line.parse::<u64>().unwrap(),
         }
     }
 

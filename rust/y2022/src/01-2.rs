@@ -11,7 +11,7 @@ fn main() {
             "" => {
                 elves.push(current);
                 current = 0;
-            },
+            }
             _ => {
                 current += line.parse::<u64>().unwrap();
             }
@@ -20,5 +20,5 @@ fn main() {
 
     elves.sort_unstable();
     let l = elves.len();
-    println!("{:?}", elves[l-1] + elves[l-2] + elves[l-3]);
+    println!("{:?}", elves[l - 1] + elves[l - 2] + elves[l - 3]);
 }

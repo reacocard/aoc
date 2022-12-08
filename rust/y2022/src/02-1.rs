@@ -1,6 +1,6 @@
 use std::fs;
 
-#[derive(Clone,Copy,Debug)]
+#[derive(Clone, Copy, Debug)]
 enum Action {
     Rock,
     Paper,
@@ -36,8 +36,7 @@ impl Action {
     }
 }
 
-
-#[derive(Clone,Copy,Debug)]
+#[derive(Clone, Copy, Debug)]
 enum Outcome {
     Lose,
     Draw,
@@ -58,7 +57,15 @@ fn main() {
     let input = fs::read_to_string("input/02.txt").unwrap();
     let mut score = 0u32;
     for line in input.lines() {
-        let (opp, me) = if let [opp, me, ..] = line.split(" ").map(Action::from_char).collect::<Vec<Action>>()[..] { (opp, me) } else { panic!("Invalid input file") };
+        let (opp, me) = if let [opp, me, ..] = line
+            .split(" ")
+            .map(Action::from_char)
+            .collect::<Vec<Action>>()[..]
+        {
+            (opp, me)
+        } else {
+            panic!("Invalid input file")
+        };
         score += me.play_against(opp).score() + me.score();
     }
     println!("{:?}", score);

@@ -1,6 +1,6 @@
 use std::fs;
 
-#[derive(Clone,Copy,Debug)]
+#[derive(Clone, Copy, Debug)]
 enum Action {
     Rock,
     Paper,
@@ -36,8 +36,7 @@ impl Action {
     }
 }
 
-
-#[derive(Clone,Copy,Debug,PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 enum Outcome {
     Lose,
     Draw,
